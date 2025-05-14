@@ -1093,9 +1093,15 @@ main .main-wrapper.demo-06 .hero-area h1 {
 
 main .main-wrapper.demo-06 .hero-area p {
   font-family: "Space Mono", sans-serif;
-  font-size: 10px;
+  font-size: 20px;
   color: rgba(255, 255, 255, 0.7);
   line-height: 40px;
+}
+
+@media (max-width: 767px) {
+  main .main-wrapper.demo-06 .hero-area p {
+    font-size: 10px;
+  }  
 }
 
 main .main-wrapper.demo-06 .hero-area .countdown .single-count-content {
