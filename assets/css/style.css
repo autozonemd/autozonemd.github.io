@@ -6,7 +6,7 @@ body {
   font-weight: normal;
   font-style: normal;
   overflow-x: hidden;
-  /* background-color: #0a0a0a; */
+  background-color: #0a0a0a;
   background-image: url(../background.png);
   z-index: -1;
 
@@ -1024,6 +1024,7 @@ p {
 main.main-06 {
   /* background: #0A0A0A; */
   background-image: url(background.png);
+  height: 100vh;
   background-size: cover;
   overflow: hidden;
 }
@@ -1334,6 +1335,9 @@ main .footer p {
 @media (max-width: 767px) {
   main .footer p {
     text-align: center;
+  }
+  .footer {
+    padding-top: 10%;
   }
 }
 
