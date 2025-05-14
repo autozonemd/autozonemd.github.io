@@ -1100,7 +1100,7 @@ main .main-wrapper.demo-06 .hero-area p {
 
 @media (max-width: 767px) {
   main .main-wrapper.demo-06 .hero-area p {
-    font-size: 10px;
+    font-size: 15px;
   }  
 }
 
@@ -1343,7 +1343,7 @@ main .footer p {
     text-align: center;
   }
   .footer {
-    padding-top: 10%;
+    top: -50px;
   }
 }
 
