@@ -17,7 +17,7 @@ body {
   padding: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  max-height: 100vh;
+  max-height: 100%;
 }
 
 a:focus,
@@ -1024,7 +1024,7 @@ p {
 main.main-06 {
   /* background: #0A0A0A; */
   background-image: url(background.png);
-  height: 100vh;
+  height: 100%;
   background-size: cover;
   overflow: hidden;
 }
