@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Academy - Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Outfit', sans-serif;
+            background-color: #17181D;
+            color: #FFFFFF;
+            font-size: 24px;
+        }
+
+        * {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            height: 100vh;
+            padding: 20px;
+            gap: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 28px;
+            margin: 10px;
+            transition: color 0.3s;
+            padding: 20px;
+            color: #FFFFFF;
+            height: 40px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .logo {
+            width: 20%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .alttext_red {
+            font-size: 10px;
+            color: #f443367d;
+            margin-top: -2px;
+            padding-top: 0;
+
+        }
+
+        .alttext_yellow {
+            font-size: 10px;
+            color: #f4b5367d;
+            margin-top: -2px;
+            padding-top: 0;
+
+        }
+
+        #glow {
+            width: 100%;
+            -webkit-box-shadow:0px 0px 300px 24px rgba(46,123,255,0.9);
+            -moz-box-shadow: 0px 0px 300px 24px rgba(46,123,255,0.9);
+            box-shadow: 0px 0px 300px 24px rgba(46,123,255,0.9);
+        }
+        #minglow {
+            width: 100%;
+            -webkit-box-shadow:0px 0px 300px 15px rgba(46,123,255,0.9);
+            -moz-box-shadow: 0px 0px 300px 15px rgba(46,123,255,0.9);
+            box-shadow: 0px 0px 300px 15px rgba(46,123,255,0.9);
+        }
+
+        /* Popup styles */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background-color: #17181D;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .popup-warning {
+            font-size: 18px;
+            color: #f443367d;
+            margin-top: 10px;
+            padding-top: 0;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #FFFFFF;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+
+        .popup-button {
+            background: rgba(255, 255, 255, 0.1);
+            color: #FFFFFF;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .popup-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                flex-direction: column;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+            a {
+                font-size: 18px;
+                margin: 5px;
+                width: 100px;
+                height: 30px;
+            }
+            .logo {
+                width: 40%;
+                margin-top: -60px;
+                margin-bottom: 10px;
+            }
+
+            /* Mobile popup styles */
+            .popup-content .popup-warning {
+                font-size: 14px !important;
+            }
+
+            .popup-content {
+                padding: 20px;
+                max-width: 70%;
+            }
+
+            .popup-content h2 {
+                font-size: 20px;
+                margin-top: 0;
+            }
+
+            .popup-content p {
+                font-size: 16px;
+                margin: 10px 0;
+            }
+
+            .popup-button {
+                padding: 12px 24px;
+                font-size: 16px;
+                margin-top: 15px;
+                font-family: 'Outfit', sans-serif;
+            }
+
+            .popup-close {
+                font-size: 20px;
+                top: 5px;
+                right: 10px;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="glow"></div>
+    <div class="container">
+        <img class="logo" src="assets/img/vibe_logo_white.png" alt="Vibe Academy Logo">
+        <h1>Vibe Academy - Menu</h1>
+        <div class="menu">
+            <a href="https://agenda.vibelab.md/">Agenda</a>
+            <a href="#" id="purtareBtn">Purtare<p class="alttext_yellow">(Necesită pornire)</p></a>
+            <a href="https://camp.vibe.md/login">Data<p class="alttext_red">(Administrator)</p></a>
+            <a href="https://office.vibe.md/">CRM<p class="alttext_red">(Administrator)</p></a>
+        </div>
+    </div>
+
+    <!-- Popup -->
+    <div class="popup-overlay" id="purtarePopup">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closePopup()">&times;</button>
+            <h2>Atenție</h2>
+            <p>Pagina trebuie pornită. Roagă administratorul să facă asta.</p>
+            <p class="popup-warning">‼️ Trebuie să fii conectat la  WiFi "Vibe Academy" pentru a accesa această pagina ‼️</p>
+            <button class="popup-button" onclick="openPurtare()">E pornită</button>
+        </div>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById('purtarePopup').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('purtarePopup').style.display = 'none';
+        }
+
+        function openPurtare() {
+            window.location.href = 'http://192.168.80.53:5000';
+        }
+
+        document.getElementById('purtareBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            showPopup();
+        });
+
+        // Close popup when clicking outside
+        document.getElementById('purtarePopup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+    </script>
+</body>
+</html>
